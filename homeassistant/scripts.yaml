@@ -1,0 +1,382 @@
+# Scripts do BTV E10 no Home Assistant (ADB). Troque media_player.android_tv_192_168_1_50 pela sua entidade.
+# Cole em scripts.yaml (ou crie cada script na interface em modo YAML).
+
+btv_voltar_inicio:
+  alias: "BTV: Início"
+  icon: mdi:home
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 102 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 102 0; sendevent /dev/input/event1 0 0 0"
+
+btv_ok:
+  alias: "BTV: OK"
+  icon: mdi:checkbox-blank-circle-outline
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 353 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 353 0; sendevent /dev/input/event1 0 0 0"
+
+btv_cima:
+  alias: "BTV: Cima"
+  icon: mdi:chevron-up
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 103 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 103 0; sendevent /dev/input/event1 0 0 0"
+
+btv_baixo:
+  alias: "BTV: Baixo"
+  icon: mdi:chevron-down
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 108 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 108 0; sendevent /dev/input/event1 0 0 0"
+
+btv_esquerda:
+  alias: "BTV: Esquerda"
+  icon: mdi:chevron-left
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 105 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 105 0; sendevent /dev/input/event1 0 0 0"
+
+btv_direita:
+  alias: "BTV: Direita"
+  icon: mdi:chevron-right
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 106 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 106 0; sendevent /dev/input/event1 0 0 0"
+
+btv_voltar_tela:
+  alias: "BTV: Voltar"
+  icon: mdi:keyboard-return
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 158 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 158 0; sendevent /dev/input/event1 0 0 0"
+
+btv_menu:
+  alias: "BTV: Menu"
+  icon: mdi:menu
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 139 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 139 0; sendevent /dev/input/event1 0 0 0"
+
+btv_mudo:
+  alias: "BTV: Mudo"
+  icon: mdi:volume-off
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 113 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 113 0; sendevent /dev/input/event1 0 0 0"
+
+btv_pausar:
+  alias: "BTV: Pausar"
+  icon: mdi:pause
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 164 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 164 0; sendevent /dev/input/event1 0 0 0"
+
+btv_continuar:
+  alias: "BTV: Continuar (play)"
+  icon: mdi:play
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 164 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 164 0; sendevent /dev/input/event1 0 0 0"
+
+btv_proxima:
+  alias: "BTV: Próxima"
+  icon: mdi:skip-next
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 163 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 163 0; sendevent /dev/input/event1 0 0 0"
+
+btv_anterior:
+  alias: "BTV: Anterior"
+  icon: mdi:skip-previous
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 165 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 165 0; sendevent /dev/input/event1 0 0 0"
+
+btv_avancar:
+  alias: "BTV: Avançar"
+  icon: mdi:fast-forward
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 208 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 208 0; sendevent /dev/input/event1 0 0 0"
+
+btv_voltar:
+  alias: "BTV: Rebobinar"
+  icon: mdi:rewind
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 168 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 168 0; sendevent /dev/input/event1 0 0 0"
+
+btv_ligar_tela:
+  alias: "BTV: Acordar a tela"
+  icon: mdi:monitor
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 143 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 143 0; sendevent /dev/input/event1 0 0 0"
+
+btv_enter:
+  alias: "BTV: Enter"
+  icon: mdi:keyboard-return
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 28 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 28 0; sendevent /dev/input/event1 0 0 0"
+
+btv_apagar:
+  alias: "BTV: Apagar (backspace)"
+  icon: mdi:backspace
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 14 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 14 0; sendevent /dev/input/event1 0 0 0"
+
+btv_volume_mais:
+  alias: "BTV: Aumentar volume"
+  icon: mdi:volume-plus
+  mode: queued
+  max: 5
+  fields:
+    passos:
+      name: Passos
+      description: Quantos níveis (1 toque = 1 nível, 0 a 15)
+      default: 2
+      selector:
+        number:
+          min: 1
+          max: 15
+  sequence:
+    - variables:
+        n: "{{ passos | default(2) | int }}"
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: >-
+          {% for i in range(n) %}sendevent /dev/input/event1 1 115 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 115 0; sendevent /dev/input/event1 0 0 0; {% endfor %}true
+
+btv_volume_menos:
+  alias: "BTV: Diminuir volume"
+  icon: mdi:volume-minus
+  mode: queued
+  max: 5
+  fields:
+    passos:
+      name: Passos
+      description: Quantos níveis (1 toque = 1 nível, 0 a 15)
+      default: 2
+      selector:
+        number:
+          min: 1
+          max: 15
+  sequence:
+    - variables:
+        n: "{{ passos | default(2) | int }}"
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: >-
+          {% for i in range(n) %}sendevent /dev/input/event1 1 114 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 114 0; sendevent /dev/input/event1 0 0 0; {% endfor %}true
+
+btv_ligar:
+  alias: "BTV: Ligar (acordar)"
+  icon: mdi:power
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "sendevent /dev/input/event1 1 143 1; sendevent /dev/input/event1 0 0 0; sendevent /dev/input/event1 1 143 0; sendevent /dev/input/event1 0 0 0"
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "input keyevent 224"
+
+btv_desligar:
+  alias: "BTV: Desligar (suspender)"
+  icon: mdi:power-sleep
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "input keyevent 223"
+
+btv_abrir_youtube:
+  alias: "BTV: Abrir YouTube"
+  icon: mdi:youtube
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "monkey -p com.google.android.youtube.tv -c android.intent.category.LAUNCHER 1"
+
+btv_abrir_app:
+  alias: "BTV: Abrir aplicativo"
+  icon: mdi:apps
+  mode: single
+  fields:
+    pacote:
+      name: Pacote Android
+      example: com.netflix.ninja
+      required: true
+      selector:
+        text:
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "monkey -p {{ pacote | regex_replace('[^A-Za-z0-9._]','') }} -c android.intent.category.LAUNCHER 1"
+
+btv_espelhar_tela:
+  alias: "BTV: Espelhar tela (abrir AirScreen)"
+  icon: mdi:cast
+  mode: single
+  sequence:
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "input keyevent 224"
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "monkey -p com.ionitech.airscreen -c android.intent.category.LAUNCHER 1"
+
+btv_digitar:
+  alias: "BTV: Digitar texto"
+  icon: mdi:keyboard
+  mode: queued
+  fields:
+    texto:
+      name: Texto
+      description: Letras, números e . , @ _ - (sem acentos)
+      selector:
+        text:
+  sequence:
+    - variables:
+        t: "{{ (texto | default('')) | regex_replace('[^A-Za-z0-9 .,@_-]','') | replace(' ','%s') }}"
+    - condition: template
+      value_template: "{{ t | length > 0 }}"
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "input text '{{ t }}'"
+
+btv_instalar_apk:
+  alias: "BTV: Instalar APK"
+  icon: mdi:android
+  mode: single
+  description: >-
+    O arquivo precisa estar em /config/www/apks (ou em outra pasta liberada em
+    allowlist_external_dirs). NÃO exponha este script à voz e só instale APKs que você conferiu.
+  fields:
+    arquivo:
+      name: Arquivo APK
+      example: app.apk
+      required: true
+      selector:
+        text:
+  sequence:
+    - variables:
+        nome: "{{ (arquivo | string | trim).split('/')[-1] | regex_replace('[^A-Za-z0-9._-]','_') }}"
+        caminho: "{{ '/config/www/apks/' ~ nome }}"
+    - condition: template
+      value_template: "{{ nome.lower().endswith('.apk') and nome | length > 4 }}"
+    - action: androidtv.upload
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        device_path: "/sdcard/Download/{{ nome }}"
+        local_path: "{{ caminho }}"
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "pm install -r /sdcard/Download/{{ nome }}"
+    - action: androidtv.adb_command
+      target:
+        entity_id: media_player.android_tv_192_168_1_50
+      data:
+        command: "rm /sdcard/Download/{{ nome }}"
+    - action: persistent_notification.create
+      data:
+        title: "BTV: Instalar APK"
+        message: "Pedido de instalação enviado. O HA não recebe o resultado: confira na lista de apps da caixa."
